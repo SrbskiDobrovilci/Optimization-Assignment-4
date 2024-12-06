@@ -1,3 +1,4 @@
+from math import e
 def bisection_method(func, a, b, tol):
     if func(a) * func(b) >= 0:
         raise ValueError("The function must have opposite signs at endpoints a and b.")
@@ -26,9 +27,8 @@ def f(x):
     return x**3 - 6*x**2 + 11*x - 6
 
 # Inputs
-a, b = 1, 2
-tol = 1e-6
-
+a, b = map(int,input().split())
+tol = float(input())
 # Find the root
 try:
     root = bisection_method(f, a, b, tol)
